@@ -1,0 +1,28 @@
+{
+  "views": {
+    "projects": {
+      "projects": "/projects",
+      "covid-tracker": "/covidtracker",
+      "workout-junkie": "/workoutjunkie"
+    },
+    "index": "/home",
+    "contact": "/contact"
+  },
+  "public": {
+    "css": {
+      "covidtracker.css": "/css/covidtracker.css",
+      "gallery": "/css/gallery.css",
+      "mobiletstyle.css": "/css/mobilestyle.css",
+      "style.css": "/css/mobilestyle.css",
+      "workoutjunkie.css": "/css/workoutjunkie.css"
+    },
+    "icons": "/icons",
+    "scripts": {
+      "slideshow.js": "/scripts/slideshow.js",
+      "snackbar.css": "/scripts/snackbar.css",
+      "snackbar.js": "/scripts/snackbar.css",
+      "timer.js": "/scripts/timer.js",
+      "topnav.js": "/scripts/topnav.js"
+    }
+  }
+}
