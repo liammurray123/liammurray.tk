@@ -1,0 +1,62 @@
+@font-face {
+  src: url(https://cdn.glitch.com/bdb56104-9021-4ba5-aefa-819c791892d4%2FSafariForSpotify_Circular.ttf);
+  font-family: "Circular";
+}
+:root {
+  --Header-Font: "Circular";
+}
+.dark {
+  /*2FBF71*/
+  --Background-Color: #151515; /*#FFFFFF*/
+  --Text-Color: #ffffff; /*#141414*/
+  --Shadow-Color: #2F2F2F;
+}
+.light {
+  --Background-Color: #ffffff; /*#FFFFFF*/
+  --Text-Color: #151515; /*#141414*/
+  --Shadow-Color: #e6e6e6;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--Background-Color);
+}
+
+nav {
+  display: flex;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "Memoji Label";
+}
+.Memoji {
+  grid-area: Memoji;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Memoji img {
+  
+  height: auto;
+  width: 50%;
+}
+
+.Label {
+  grid-area: Label;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Label h1 {
+  font-family: var(--Header-Font);
+  size: 2rem;
+  color: var(--Text-Color);
+}
