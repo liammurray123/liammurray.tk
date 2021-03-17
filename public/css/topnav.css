@@ -5,19 +5,20 @@ nav {
 }
 
 nav a {
-  font-family: var(--BodyFont);
+  font-family: var(--Header-Font);
   float: right;
   display: block;
-  color: white;
+  color: var(--Text-Color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  
 }
 
 nav a:hover {
-  border-bottom: 2px solid white;
-
+  background-color: var(--Shadow-Color);
+  transition: 1s;
 }
 
 /* nav #logo {
@@ -31,6 +32,7 @@ nav a:hover {
 nav .icon {
   display: none;
   float: right;
+  color: var(--Text-Color);
 }
 
 @media screen and (max-width: 600px) {

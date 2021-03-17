@@ -1,9 +1,13 @@
 @font-face {
-  src: url(https://cdn.glitch.com/bdb56104-9021-4ba5-aefa-819c791892d4%2FSafariForSpotify_Circular.ttf);
-  font-family: "Circular";
+  font-family: 'Circular Spotify Tx T';
+  src: url('/Fonts/CircularSpotifyTxT-Black.woff2') format('woff2'),
+      url('/Fonts/CircularSpotifyTxT-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 :root {
-  --Header-Font: "Circular";
+  --Header-Font: 'Circular Spotify Tx T';
 }
 .dark {
   /*2FBF71*/
@@ -45,18 +49,27 @@ main {
 .Memoji img {
   
   height: auto;
-  width: 50%;
+  width: 25vw;
 }
 
 .Label {
   grid-area: Label;
   display: flex;
   align-items: center;
+  justify-items: center;
   justify-content: center;
 }
 
 .Label h1 {
   font-family: var(--Header-Font);
-  size: 2rem;
+  font-size: 10vw;
   color: var(--Text-Color);
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 100vw;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "Memoji" "Label";
+  }
 }
