@@ -1,30 +1,59 @@
 @font-face {
   font-family: 'Circular Spotify Tx T';
   src: url('/Fonts/CircularSpotifyTxT-Black.woff2') format('woff2'),
-      url('/Fonts/CircularSpotifyTxT-Black.woff') format('woff');
+    url('/Fonts/CircularSpotifyTxT-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
+
 :root {
   --Header-Font: 'Circular Spotify Tx T';
 }
+
 .dark {
   /*2FBF71*/
-  --Background-Color: #151515; /*#FFFFFF*/
-  --Text-Color: #ffffff; /*#141414*/
+  --Background-Color: #151515;
+  /*#FFFFFF*/
+  --Text-Color: #ffffff;
+  /*#141414*/
   --Shadow-Color: #2F2F2F;
+  --Alt-Shadow-Color: #e6e6e6;
 }
+
 .light {
-  --Background-Color: #ffffff; /*#FFFFFF*/
-  --Text-Color: #151515; /*#141414*/
+  --Background-Color: #ffffff;
+  /*#FFFFFF*/
+  --Text-Color: #151515;
+  /*#141414*/
   --Shadow-Color: #e6e6e6;
+  --Alt-Shadow-Color: #2F2F2F;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background 1s;
+}
+
+body {
   background-color: var(--Background-Color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--Header-Font);
+  color: var(--Text-Color);
+}
+
+p {
+  font-family: var(--Header-Font);
+  color: var(--Text-Color);
 }
 
 nav {
@@ -33,12 +62,31 @@ nav {
 
 main {
   height: 100vh;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "Memoji Label";
+
 }
+
+main#Home {
+  grid-template-areas: "Memoji Label";align-items: center;
+  align-items: center;
+justify-items: center;
+}
+
+main#Projects {
+  grid-template-areas:
+    "Projects-Grid Yachtspot-Grid";
+}
+
+main#Contact {
+  grid-template-areas: "Memoji Contact-Links";
+  align-items: center;
+justify-items: center;
+}
+
 .Memoji {
   grid-area: Memoji;
   display: flex;
@@ -47,7 +95,6 @@ main {
 }
 
 .Memoji img {
-  
   height: auto;
   width: 25vw;
 }
@@ -66,10 +113,255 @@ main {
   color: var(--Text-Color);
 }
 
+.Projects-Grid {
+  grid-area: Projects-Grid;
+  height: 100vh;
+  max-height: 10vh;
+  padding: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5vh 2.5vh;
+  grid-template-areas: "Project1 Project2""Project3 Project4";
+}
+
+.Projects-Grid div {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  padding: 1.5rem;
+  background-color: var(--Shadow-Color);
+  transition: 0.5s;
+}
+
+.Projects-Grid div:hover {
+  box-shadow: -1rem 0 3rem #1F1F1F;
+
+}
+
+.Project1 {
+  grid-area: Project1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 20vw;
+  width: 20vw;
+  padding: 1.5rem;
+  background-color: var(--Shadow-Color);
+}
+
+.Project2 {
+  grid-area: Project2;
+}
+
+.Project3 {
+  grid-area: Project3;
+}
+
+.Project4 {
+  grid-area: Project4;
+}
+
+.Projects-Grid div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.5em 1fr 1.5em;
+  grid-template-areas: "Project-Title""Project-Details""Tech-Icons";
+}
+
+.Projects-Grid div a {
+  grid-area: Project-Title;
+}
+
+.Projects-Grid div p {
+  grid-area: Project-Details;
+  align-self: flex-start;
+padding-top: 1rem;
+}
+
+.Projects-Grid div row {
+  grid-area: Tech-Icons;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--Text-Color);
+  font-size: 2em;
+}
+
+.Yachtspot-Grid {
+  grid-area: Yachtspot-Grid;
+  height: 100vh;
+  padding: 5vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 0;
+  grid-template-areas: "Yachtspot-Title""Yachtspot-Info";
+  align-items: end;
+  justify-items: end;
+}
+
+.Yachtspot-Title {
+  grid-area: Yachtspot-Title;
+  display: flex;
+  align-items: flex-end;
+  justify-items: flex-end;
+  flex-direction: column;
+}
+
+
+.Yachtspot-Title h2 {
+  font-size: 8vw;
+  color: var(--Text-Color);
+}
+
+.Yachtspot-Title h3 {
+  font-size: 2vw;
+  color: var(--Alt-Shadow-Color);
+}
+
+.Yachtspot-Info {
+  grid-area: Yachtspot-Info;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr /* 1.5em */ ;
+  grid-template-areas: "Yachtspot-Text" /*"Tech-Icons"*/;
+}
+
+.Yachtspot-Info p {
+  grid-area: Yachtspot-Text;
+}
+
+.Yachtspot-Info row {
+  /* grid-area: Tech-Icons; */
+  display: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Yachtspot-Info row object {
+  max-height: 2em;
+  max-width: 2em;
+  width: auto;
+  padding-top: none;
+}
+.Contact-Links {
+  grid-area: Contact-Links;
+  height: 100%;
+  padding: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5vh 2.5vh;
+  grid-template-areas:
+    "Instagram Twitter"
+    "GitHub Newspaper";
+    
+}
+
+#Instagram {
+  grid-area: Instagram;
+}
+
+#Twitter {
+  grid-area: Twitter;
+}
+
+#GitHub {
+  grid-area: GitHub;
+}
+
+#Newspaper {
+  grid-area: Newspaper;
+}
+.Contact-Links article {
+  height: 20vw;
+  width: 20vw;
+  padding: 1.5rem;
+  background-color: var(--Shadow-Color);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.Contact-Links article:hover {
+  box-shadow: -1rem 0 3rem #1F1F1F;
+}
+.Contact-Links a {
+  color: var(--Text-Color);
+  font-family: var(--Header-Font);
+}
+
+a {
+  text-decoration: none;}
+
+a i {
+  size: 8em;
+}
 @media screen and (max-width: 600px) {
-  main {
+  main#Home {
     grid-template-columns: 100vw;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "Memoji" "Label";
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: "Memoji""Label";
+  }
+
+  main#Projects {
+    grid-template-columns: 100vw;
+    grid-template-rows: 150vh 50vh;
+    grid-template-areas:
+      "Projects-Grid""Yachtspot-Grid";
+  }
+
+  .Memoji img {
+    height: auto;
+    width: 75vw;
+  }
+
+  .Label h1 {
+    font-size: 20vw;
+  }
+
+  .Projects-Grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 50vh 50vh 50vh;
+    grid-template-areas:
+      "Project1""Project2""Project3";
+  }
+
+  .Projects-Grid div {
+    width: 80vw;
+    height: 50vh;
+  }
+
+  .Yachtspot-Grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas:
+      "Yachtspot-Title""Yachtspot-Info";
+  }
+
+  .Yachtspot-Title {
+    align-items: flex-start;
+    justify-items: flex-start;
+  }
+
+  .Yachtspot-Info {
+    align-items: center;
+    justify-items: center;
+  }
+
+  .Yachtspot-Title h2 {
+    font-size: 12vw;
+    color: var(--Text-Color);
+    text-align: center;
+  }
+
+  .Yachtspot-Title h3 {
+    font-size: 8vw;
+    color: var(--Alt-Shadow-Color);
   }
 }

@@ -21,6 +21,18 @@ nav a:hover {
   transition: 1s;
 }
 
+button#colorModeButton {
+  border: none;
+  font-size: 17px; color: var(--Text-Color);
+  padding: 14px 16px;
+  background: var(--Background-Color);
+}
+
+button#colorModeButton:hover {
+  background-color: var(--Shadow-Color);
+  transition: 1s;
+}
+
 /* nav #logo {
   height: 5vh;
   margin: 14px 16px;
@@ -60,6 +72,6 @@ nav .icon {
   nav.responsive a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
   }
 }
