@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'Circular Spotify Tx T';
   src: url('/Fonts/CircularSpotifyTxT-Black.woff2') format('woff2'),
-    url('/Fonts/CircularSpotifyTxT-Black.woff') format('woff');
+    url('/Fonts/CircularSpotifyTxT-Black.woff') format('woff'),
+    url('/Fonts/Circular.ttf') format('ttf');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
