@@ -8,8 +8,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Stanley';
+  src: url('/Fonts/Stanley.otf') format('otf');
+}
+
 :root {
-  --Header-Font: 'Circular Spotify Tx T';
+  --Header-Font: 'Stanley';
 }
 
 .dark {
@@ -259,7 +264,7 @@ padding-top: 1rem;
   grid-template-areas:
     "Instagram Twitter"
     "GitHub Newspaper";
-    
+
 }
 
 #Instagram {
